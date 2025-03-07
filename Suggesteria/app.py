@@ -41,9 +41,9 @@ def get_movie_recommendation(movie_name):
     return recommend_frame
 
 st.header('Movie Recommender System')
-movies = pickle.load(open('movies.pkl','rb'))
-csr_data = pickle.load(open('csr_data.pkl','rb'))
-final_dataset = pickle.load(open('final_dataset.pkl','rb'))
+movies = pickle.load(open('../movies.pkl', 'rb'))
+csr_data = pickle.load(open('../csr_data.pkl', 'rb'))
+final_dataset = pickle.load(open('../final_dataset.pkl', 'rb'))
 
 knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=20, n_jobs=-1)
 knn.fit(csr_data)
